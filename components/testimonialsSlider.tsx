@@ -49,14 +49,14 @@ const testimonials = [
     image: "/lo.jpg",
   },
   {
-    name: "David benson",
+    name: "David Benson",
     location: "Edo, Nigeria",
     rating: 5,
     comment: "Excellent service and fast shipping.",
     image: "/ge.jpg",
   },
   {
-    name: "isreal Kennedy",
+    name: "Isreal Kennedy",
     location: "Delta, Nigeria",
     rating: 4,
     comment: "My surest plug for all tech gadgets. Their prices are unbeatable!",
@@ -86,8 +86,12 @@ export default function TestimonialsSlider() {
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-3 text-black">What Our Customers Say</h2>
-        <p className="text-gray-600 text-center mb-12">Real reviews from satisfied customers</p>
+        <h2 className="text-3xl font-bold text-center mb-3 text-black">
+          What Our Customers Say
+        </h2>
+        <p className="text-gray-600 text-center mb-12">
+          Real reviews from satisfied customers
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 transition-transform duration-500">
           {getVisibleTestimonials().map((testimonial, index) => (
             <Card key={index}>
@@ -100,7 +104,10 @@ export default function TestimonialsSlider() {
                     />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4">"{testimonial.comment}"</p>
+                {/* ✅ Fixed here */}
+                <p className="text-gray-600 mb-4">
+                  &quot;{testimonial.comment}&quot;
+                </p>
                 <div className="flex items-center gap-3">
                   <Image
                     src={testimonial.image ?? "/ge.jpg"}
@@ -111,7 +118,9 @@ export default function TestimonialsSlider() {
                   />
                   <div>
                     <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-gray-500">{testimonial.location}</p>
+                    <p className="text-sm text-gray-500">
+                      {testimonial.location}
+                    </p>
                   </div>
                 </div>
               </CardContent>
