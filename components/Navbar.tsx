@@ -29,7 +29,7 @@ export const Navbar = () => {
           <Image src="/cyfa.png" alt="Cyfa Logo" width={120} height={50} />
         </Link>
 
-        {/* Center Links */}
+        {/* Center Links (Desktop only) */}
         <div className="hidden md:flex flex-1 justify-center text-lg font-bold">
           <Link href="/" className="px-4 py-2 hover:text-blue-600">Home</Link>
           <Link href="/about" className="px-4 py-2 hover:text-blue-600">About</Link>
@@ -37,8 +37,8 @@ export const Navbar = () => {
           <Link href="/checkout" className="px-4 py-2 hover:text-blue-600">Checkout</Link>
         </div>
 
-        {/* Right Section (Desktop only) */}
-        <div className="hidden md:flex items-center space-x-4">
+        {/* Right Section (Cart + Auth + Mobile Menu Toggle) */}
+        <div className="flex items-center space-x-4">
           
           {/* Cart */}
           <Link href="/checkout" className="relative">
@@ -50,33 +50,30 @@ export const Navbar = () => {
             )}
           </Link>
 
-          {/* Auth Icons */}
+          {/* Auth (icon only) */}
           {session ? (
-            <div
+            <LogOut
               onClick={() => signOut()}
-              className="flex items-center space-x-1 cursor-pointer hover:scale-105 transition"
-            >
-              <LogOut className="h-6 w-6 text-red-600" />
-              <span className="text-sm text-red-600 font-medium">Sign Out</span>
-            </div>
+              className="h-6 w-6 text-red-600 cursor-pointer hover:scale-110 transition"
+            />
           ) : (
             <User
               onClick={() => signIn("google")}
               className="h-6 w-6 text-black hover:text-blue-600 cursor-pointer hover:scale-110 transition"
             />
           )}
-        </div>
 
-        {/* Mobile Menu Toggle */}
-        <div
-          className="md:hidden cursor-pointer p-2 text-black"
-          onClick={() => setMobileOpen((prev) => !prev)}
-        >
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {/* Mobile Menu Toggle */}
+          <div
+            className="md:hidden cursor-pointer p-2 text-black"
+            onClick={() => setMobileOpen((prev) => !prev)}
+          >
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu (Links only) */}
       {mobileOpen && (
         <nav className="md:hidden bg-white shadow-md text-center">
           <ul className="flex flex-col p-4 space-y-2">
@@ -84,25 +81,6 @@ export const Navbar = () => {
             <li><Link href="/about" className="block hover:text-blue-600">About</Link></li>
             <li><Link href="/products" className="block hover:text-blue-600">Products</Link></li>
             <li><Link href="/checkout" className="block hover:text-blue-600">Checkout</Link></li>
-            
-            {/* Mobile Auth Buttons */}
-            {session ? (
-              <li
-                onClick={() => signOut()}
-                className="flex items-center justify-center space-x-1 cursor-pointer hover:text-red-600"
-              >
-                <LogOut className="h-5 w-5 text-red-600" />
-                <span className="text-sm text-red-600 font-medium">Sign Out</span>
-              </li>
-            ) : (
-              <li
-                onClick={() => signIn("google")}
-                className="flex items-center justify-center space-x-1 cursor-pointer hover:text-green-600"
-              >
-                <User className="h-5 w-5 text-blue-600" />
-                <span className="text-sm text-blue-600 font-medium">Sign In</span>
-              </li>
-            )}
           </ul>
         </nav>
       )}

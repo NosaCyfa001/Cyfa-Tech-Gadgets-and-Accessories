@@ -187,10 +187,14 @@ export default function CompleteAboutPage() {
             <div className="relative">
               <div className="bg-gradient-to-br from-yellow-500 to-blue-400 rounded-2xl p-8 text-white">
                 <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-                <p className="text-white font-normal leading-relaxed">
-                  To democratize access to cutting-edge technology by curating the best gadgets,
-                  offering competitive prices, and delivering an experience that exceeds expectations
-                  at every turn.
+                <p className="text-white font-normal leading-relaxed mt-4">
+                  At <span className="font-bold">Cyfa Tech</span>, we go beyond retail—we
+                  <span className="font-bold"> buy 100% high-quality brand-new and UK used gadgets</span>,
+                  ensuring every device meets our strict quality standards.
+                  We don’t just sell; we also offer a
+                  <span className="font-bold"> swap service</span>: bring your old gadget,
+                  add some cash, and upgrade instantly.
+                  It’s our way of making technology more accessible, flexible, and affordable for everyone.
                 </p>
               </div>
             </div>
