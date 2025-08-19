@@ -38,7 +38,7 @@ export const Navbar = () => {
         </div>
 
         {/* Right Section (Cart + Auth + Mobile Menu Toggle) */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center justify-center space-x-4">
           
           {/* Cart */}
           <Link href="/checkout" className="relative">
@@ -50,11 +50,12 @@ export const Navbar = () => {
             )}
           </Link>
 
+          <div className="flex items-center space-x-2 ml-2">
           {/* Auth (icon only) */}
           {session ? (
             <LogOut
               onClick={() => signOut()}
-              className="h-6 w-6 text-red-600 cursor-pointer hover:scale-110 transition"
+              className="h-6 w-6 text-black cursor-pointer hover:scale-110 transition"
             />
           ) : (
             <User
@@ -62,6 +63,7 @@ export const Navbar = () => {
               className="h-6 w-6 text-black hover:text-blue-600 cursor-pointer hover:scale-110 transition"
             />
           )}
+          </div>
 
           {/* Mobile Menu Toggle */}
           <div
