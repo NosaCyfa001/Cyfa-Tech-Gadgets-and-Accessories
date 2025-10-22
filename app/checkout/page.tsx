@@ -40,7 +40,7 @@ export default function CheckoutPage() {
             <h1 className="text-3xl font-bold mb-8 text-center text-black">Checkout</h1>
             <Card className="max-w-md mx-auto mb-8">
                 <CardHeader>
-                    <CardTitle className="text-xl font-bold text-center">
+                    <CardTitle className="text-2xl font-bold text-center">
                         <span className="text-yellow-500 mr-2">Order</span>
                         <span className="text-blue-500">Summary</span>
                     </CardTitle>
