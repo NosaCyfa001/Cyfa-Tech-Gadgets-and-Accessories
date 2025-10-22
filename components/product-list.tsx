@@ -2,7 +2,6 @@
 import Stripe from "stripe";
 import { ProductCard } from "./product-card";
 import { useState } from "react";
-import { Button } from "./ui/button";
 
 interface Props {
     products: Stripe.Product[];
@@ -45,15 +44,6 @@ export const ProductList = ({ products }: Props) => {
                         className="w-full rounded border border-yellow-500 px-4 py-2 pr-10 bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Search products..."
                     />
-                    {searchTerm && (
-                        <button
-                            onClick={() => setSearchTerm("")}
-                            className="absolute top-1/2 transform -translate-y-1/2 text-white"
-                            aria-label="Clear search"
-                        >
-                            ✕
-                        </button>
-                    )}
                 </div>
             </div>
 
