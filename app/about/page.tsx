@@ -240,7 +240,7 @@ export default function CompleteAboutPage() {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Meet Our Team</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
             <p className="text-xl text-gray-600">The Amazing people Behind Cyfa Tech</p>
           </div>
 
@@ -273,7 +273,7 @@ export default function CompleteAboutPage() {
                               </div>
                             </div>
                             <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                            <p className="text-blue-600 font-semibold mb-3">{member.role}</p>
+                            <p className="text-gray-900 font-semibold mb-3">{member.role}</p>
                             <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
                           </div>
                         ))}
@@ -293,7 +293,7 @@ export default function CompleteAboutPage() {
                     className={`w-8 h-8 flex items-center justify-center rounded-full text-sm font-semibold transition-all duration-300 
                       hover:scale-110 
                       ${index === currentTeamSlide
-                        ? "bg-blue-500 text-white shadow-lg"
+                        ? "bg-white text-white"
                         : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
                   >
                     {index + 1}

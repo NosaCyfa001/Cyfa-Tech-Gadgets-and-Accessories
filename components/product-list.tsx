@@ -26,7 +26,7 @@ export const ProductList = ({ products }: Props) => {
         <div className="container mx-auto px-4 py-8">
             {/* Page Heading */}
             <div className="mb-4 text-center">
-                <h1 className="text-3xl font-bold leading-none tracking-tight text-black mb-2">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 text-center text-gray-900">
                     All Products
                 </h1>
                 <p className="text-gray-600 text-center">
@@ -41,7 +41,7 @@ export const ProductList = ({ products }: Props) => {
                         type="text"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className="w-full rounded border border-yellow-500 px-4 py-2 pr-10 bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full rounded border px-4 py-2 pr-10 bg-white text-black focus:outline-none focus:ring-2"
                         placeholder="Search products..."
                     />
                 </div>

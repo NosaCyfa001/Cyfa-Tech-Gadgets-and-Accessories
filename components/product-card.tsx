@@ -3,6 +3,8 @@ import Stripe from "stripe";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import { useCartStore } from "@/store/cart-store";
+import { ShoppingCart } from "lucide-react";
 
 interface Props {
   product: Stripe.Product;
@@ -10,6 +12,20 @@ interface Props {
 
 export const ProductCard = ({ product }: Props) => {
   const price = product.default_price as Stripe.Price;
+  const { items, addItem } = useCartStore();
+  const cartItem = items.find((item) => item.id === product.id);
+  const quantity = cartItem ? cartItem.quantity : 0;
+
+  const onAddItem = (e: React.MouseEvent) => {
+    e.preventDefault(); // Prevent navigation when clicking the button
+    addItem({
+      id: product.id,
+      name: product.name,
+      price: price.unit_amount as number,
+      imageUrl: product.images ? product.images[0] : null,
+      quantity: 1,
+    });
+  };
 
   return (
     <Link href={`/products/${product.id}`} className="block h-full">
@@ -59,9 +75,15 @@ export const ProductCard = ({ product }: Props) => {
 
               <Button
                 size="sm"
-                className="w-full bg-black hover:bg-gray-800 text-white text-sm sm:text-base transition-colors"
+                onClick={onAddItem}
+                className="w-full bg-gradient-to-r  hover:to-blue-800 text-white text-sm sm:text-base transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
               >
-                View Details
+                Add to Cart
+                {quantity > 0 && (
+                  <span className="ml-1 bg-white text-red-600 rounded-full px-2 py-0.5 text-xs font-bold">
+                    {quantity}
+                  </span>
+                )}
               </Button>
             </div>
           </CardContent>

@@ -23,7 +23,6 @@ export const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 bg-white shadow">
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
-        
         {/* Left Logo */}
         <Link href="/" className="flex-shrink-0">
           <Image src="/cyfa.png" alt="Cyfa Logo" width={120} height={50} />
@@ -31,15 +30,22 @@ export const Navbar = () => {
 
         {/* Center Links (Desktop only) */}
         <div className="hidden md:flex flex-1 justify-center text-lg font-bold">
-          <Link href="/" className="px-4 py-2 hover:text-blue-600">Home</Link>
-          <Link href="/about" className="px-4 py-2 hover:text-blue-600">About</Link>
-          <Link href="/products" className="px-4 py-2 hover:text-blue-600">Products</Link>
-          <Link href="/checkout" className="px-4 py-2 hover:text-blue-600">Checkout</Link>
+          <Link href="/" className="px-4 py-2 hover:text-blue-600">
+            Home
+          </Link>
+          <Link href="/about" className="px-4 py-2 hover:text-blue-600">
+            About
+          </Link>
+          <Link href="/products" className="px-4 py-2 hover:text-blue-600">
+            Products
+          </Link>
+          <Link href="/checkout" className="px-4 py-2 hover:text-blue-600">
+            Checkout
+          </Link>
         </div>
 
         {/* Right Section (Cart + Auth + Mobile Menu Toggle) */}
         <div className="flex items-center justify-center space-x-4">
-          
           {/* Cart */}
           <Link href="/checkout" className="relative">
             <ShoppingCart className="h-6 w-6" />
@@ -49,20 +55,30 @@ export const Navbar = () => {
               </span>
             )}
           </Link>
-
-          <div className="flex items-center space-x-2 ml-2">
-          {/* Auth (icon only) */}
-          {session ? (
-            <LogOut
-              onClick={() => signOut()}
-              className="h-6 w-6 text-black cursor-pointer hover:scale-110 transition"
-            />
-          ) : (
-            <User
-              onClick={() => signIn("google")}
-              className="h-6 w-6 text-black hover:text-blue-600 cursor-pointer hover:scale-110 transition"
-            />
-          )}
+          <div className="flex items-center space-x-2 ml-2 relative">
+            {session ? (
+              <div className="relative group">
+                <LogOut
+                  onClick={() => signOut()}
+                  className="h-6 w-6 text-black cursor-pointer hover:scale-110 transition-transform duration-200"
+                />
+                {/* Tooltip */}
+                <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs rounded-md px-2.5 py-1.5 shadow-lg opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-out pointer-events-none whitespace-nowrap">
+                  Logout
+                </span>
+              </div>
+            ) : (
+              <div className="relative group">
+                <User
+                  onClick={() => signIn("google")}
+                  className="h-6 w-6 text-black hover:text-blue-600 cursor-pointer hover:scale-110 transition-transform duration-200"
+                />
+                {/* Tooltip */}
+                <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs rounded-md px-2.5 py-1.5 shadow-lg opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-out pointer-events-none whitespace-nowrap">
+                  Login
+                </span>
+              </div>
+            )}
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -70,7 +86,11 @@ export const Navbar = () => {
             className="md:hidden cursor-pointer p-2 text-black"
             onClick={() => setMobileOpen((prev) => !prev)}
           >
-            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </div>
         </div>
       </div>
@@ -79,10 +99,26 @@ export const Navbar = () => {
       {mobileOpen && (
         <nav className="md:hidden bg-white shadow-md text-center">
           <ul className="flex flex-col p-4 space-y-2">
-            <li><Link href="/" className="block hover:text-blue-600">Home</Link></li>
-            <li><Link href="/about" className="block hover:text-blue-600">About</Link></li>
-            <li><Link href="/products" className="block hover:text-blue-600">Products</Link></li>
-            <li><Link href="/checkout" className="block hover:text-blue-600">Checkout</Link></li>
+            <li>
+              <Link href="/" className="block hover:text-blue-600">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className="block hover:text-blue-600">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/products" className="block hover:text-blue-600">
+                Products
+              </Link>
+            </li>
+            <li>
+              <Link href="/checkout" className="block hover:text-blue-600">
+                Checkout
+              </Link>
+            </li>
           </ul>
         </nav>
       )}
