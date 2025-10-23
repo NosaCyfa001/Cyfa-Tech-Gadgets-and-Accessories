@@ -46,7 +46,7 @@ export default function SuccessPage() {
         height={250}
         className="mx-auto mb-6"
       />
-      <h1 className="text-3xl font-bold mb-4 text-green-700">
+      <h1 className="text-3xl font-bold mb-4 text-gray-300">
         Payment Successful!
       </h1>
       <p className="mb-6 text-gray-600 text-lg">
