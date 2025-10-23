@@ -46,7 +46,7 @@ export default function SuccessPage() {
         height={250}
         className="mx-auto mb-6"
       />
-      <h1 className="text-3xl font-bold mb-4 text-gray-300">
+      <h1 className="text-3xl font-bold mb-4 text-green-700">
         Payment Successful!
       </h1>
       <p className="mb-6 text-gray-600 text-lg">
@@ -54,7 +54,7 @@ export default function SuccessPage() {
         will be on its way soon.
       </p>
       <Link href="/products">
-        <Button className="px-6 py-2 text-white hover:text-green-500">
+        <Button className="px-6 py-2 text-white hover:text-gray-300">
           Continue Shopping <ArrowRight className="w-5 h-5" />
         </Button>
       </Link>
