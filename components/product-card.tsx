@@ -47,7 +47,7 @@ export const ProductCard = ({ product }: Props) => {
         <div className="flex flex-col flex-1">
           {/* Header */}
           <CardHeader className="px-4 pt-4 pb-2">
-            <CardTitle className="text-lg sm:text-xl font-semibold text-yellow-500 text-center">
+            <CardTitle className="text-2xl font-bold text-yellow-500 text-center">
               {product.name}
             </CardTitle>
           </CardHeader>
@@ -63,7 +63,7 @@ export const ProductCard = ({ product }: Props) => {
             {/* Price + Button */}
             <div className="mt-auto space-y-3 text-center">
               {price?.unit_amount && (
-                <p className="text-lg sm:text-xl font-bold text-blue-600">
+                <p className="text-2xl font-bold text-blue-600">
                   ₦
                   {new Intl.NumberFormat("en-NG", {
                     style: "decimal",
