@@ -22,17 +22,18 @@ Category	Tools
 Frontend	Next.js (React) • TypeScript • TailwindCSS
 Backend	Node.js • Next.js API Routes
 Database	Stripe Product Data
-Auth	Next Auth
+Next Auth
 Deployment	Vercel
+
 ⚙️ Installation
 
 To run locally:
 
 # Clone the repo
-git clone https://github.com/NosaCyfa001/cyfa-luxury-wears.git
+git clone https://cyfa-tech-gadgets-and-accessories.vercel.app/
 
 # Go into the directory
-cd cyfa-luxury-wears
+cd cyfa-tech-gadgets-and-accessories
 
 # Install dependencies
 npm install
