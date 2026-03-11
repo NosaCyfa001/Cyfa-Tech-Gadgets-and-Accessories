@@ -47,7 +47,7 @@ export const ProductCard = ({ product }: Props) => {
         <div className="flex flex-col flex-1">
           {/* Header */}
           <CardHeader className="px-4 pt-4 pb-2">
-            <CardTitle className="text-2xl font-bold text-yellow-500 text-center">
+            <CardTitle className="text-2xl font-bold text-slate-800 text-center">
               {product.name}
             </CardTitle>
           </CardHeader>
@@ -63,7 +63,7 @@ export const ProductCard = ({ product }: Props) => {
             {/* Price + Button */}
             <div className="mt-auto space-y-3 text-center">
               {price?.unit_amount && (
-                <p className="text-2xl font-bold text-blue-600">
+                <p className="text-2xl font-bold text-black">
                   ₦
                   {new Intl.NumberFormat("en-NG", {
                     style: "decimal",
@@ -76,7 +76,7 @@ export const ProductCard = ({ product }: Props) => {
               <Button
                 size="sm"
                 onClick={onAddItem}
-                className="w-full bg-gradient-to-r  hover:to-blue-800 text-white text-sm sm:text-base transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+                className="w-full bg-gradient-to-r  hover:text-gray-300 text-white text-sm sm:text-base transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
               >
                 Add to Cart
                 {quantity > 0 && (

@@ -242,7 +242,7 @@ export default function CheckoutPage() {
                 <input type="hidden" name="discount" value={discount} />
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r  hover:to-blue-800 text-white text-sm sm:text-base transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+                  className="w-full bg-gradient-to-r  hover:text-gray-300 text-white text-sm sm:text-base transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
                 >
                   Proceed to Payment
                 </Button>

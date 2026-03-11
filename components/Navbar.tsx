@@ -30,16 +30,16 @@ export const Navbar = () => {
 
         {/* Center Links (Desktop only) */}
         <div className="hidden md:flex flex-1 justify-center text-lg font-bold">
-          <Link href="/" className="px-4 py-2 hover:text-blue-600">
+          <Link href="/" className="px-4 py-2 hover:text-gray-500">
             Home
           </Link>
-          <Link href="/about" className="px-4 py-2 hover:text-blue-600">
+          <Link href="/about" className="px-4 py-2 hover:text-gray-500">
             About
           </Link>
-          <Link href="/products" className="px-4 py-2 hover:text-blue-600">
+          <Link href="/products" className="px-4 py-2 hover:text-gray-500">
             Products
           </Link>
-          <Link href="/checkout" className="px-4 py-2 hover:text-blue-600">
+          <Link href="/checkout" className="px-4 py-2 hover:text-gray-500">
             Checkout
           </Link>
         </div>
@@ -47,7 +47,7 @@ export const Navbar = () => {
         {/* Right Section (Cart + Auth + Mobile Menu Toggle) */}
         <div className="flex items-center justify-center space-x-4">
           {/* Cart */}
-          <Link href="/checkout" className="relative">
+          <Link href="/checkout" className="relative hover:text-gray-500 transition-colors">
             <ShoppingCart className="h-6 w-6" />
             {cartCount > 0 && (
               <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">
@@ -60,7 +60,7 @@ export const Navbar = () => {
               <div className="relative group">
                 <LogOut
                   onClick={() => signOut()}
-                  className="h-6 w-6 text-black cursor-pointer hover:scale-110 transition-transform duration-200"
+                  className="h-6 w-6 text-black cursor-pointer hover:text-gray-500 hover:scale-110 transition-transform duration-200"
                 />
                 {/* Tooltip */}
                 <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs rounded-md px-2.5 py-1.5 shadow-lg opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-out pointer-events-none whitespace-nowrap">
@@ -71,7 +71,7 @@ export const Navbar = () => {
               <div className="relative group">
                 <User
                   onClick={() => signIn("google")}
-                  className="h-6 w-6 text-black hover:text-blue-600 cursor-pointer hover:scale-110 transition-transform duration-200"
+                  className="h-6 w-6 text-black hover:text-gray-500 cursor-pointer hover:scale-110 transition-transform duration-200"
                 />
                 {/* Tooltip */}
                 <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs rounded-md px-2.5 py-1.5 shadow-lg opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-out pointer-events-none whitespace-nowrap">
@@ -100,22 +100,22 @@ export const Navbar = () => {
         <nav className="md:hidden bg-white shadow-md text-center">
           <ul className="flex flex-col p-4 space-y-2">
             <li>
-              <Link href="/" className="block hover:text-blue-600">
+              <Link href="/" className="block hover:text-gray-500">
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/about" className="block hover:text-blue-600">
+              <Link href="/about" className="block hover:text-gray-500">
                 About
               </Link>
             </li>
             <li>
-              <Link href="/products" className="block hover:text-blue-600">
+              <Link href="/products" className="block hover:text-gray-500">
                 Products
               </Link>
             </li>
             <li>
-              <Link href="/checkout" className="block hover:text-blue-600">
+              <Link href="/checkout" className="block hover:text-gray-500">
                 Checkout
               </Link>
             </li>
