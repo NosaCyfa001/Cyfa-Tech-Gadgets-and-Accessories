@@ -46,7 +46,7 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: rgb(196, 195, 195);
+  color: darkgrey;
 }
 
 body {
@@ -74,9 +74,7 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: blue;
-}
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
