@@ -65,14 +65,23 @@ export const Navbar = () => {
             {session ? (
               <div className="relative group cursor-pointer">
                 {/* Avatar */}
-                <Image
-                  src={session.user?.image || "/avatar.png"}
-                  alt="User Avatar"
-                  width={28}
-                  height={28}
-                  className="rounded-full hover:scale-110 transition-transform duration-200"
-                  onClick={() => signOut()}
-                />
+                {session.user?.image ? (
+                  <Image
+                    src={session.user.image}
+                    alt="User Avatar"
+                    width={28}
+                    height={28}
+                    className="rounded-full hover:scale-110 transition-transform duration-200"
+                    onClick={() => signOut()}
+                  />
+                ) : (
+                  <div
+                    onClick={() => signOut()}
+                    className="flex h-7 w-7 items-center justify-center rounded-full bg-gray-800 text-white text-sm font-semibold cursor-pointer hover:scale-110 transition-transform duration-200"
+                  >
+                    {session.user?.name?.charAt(0).toUpperCase()}
+                  </div>
+                )}
 
                 {/* Tooltip */}
                 <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs rounded-md px-2.5 py-1.5 shadow-lg opacity-0 translate-y-1 scale-95 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-300 ease-in-out pointer-events-none whitespace-nowrap">
