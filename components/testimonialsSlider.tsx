@@ -136,7 +136,7 @@ export default function TestimonialsSlider() {
               onClick={() => setCurrentSlide(index)}
               className={`w-8 h-8 flex items-center justify-center rounded-full text-sm font-bold transition-all duration-300 ${
                 index === currentSlide
-                  ? "bg-blue-500 text-white"
+                  ? "bg-gray-900 text-white"
                   : "bg-gray-300 text-gray-700 hover:bg-gray-400"
               }`}
             >

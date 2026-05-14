@@ -55,7 +55,7 @@ body {
   padding: 0;
   width: 100%;
   display: flex;
-  flex-direction: column; /* Ensures a vertical layout */
+  flex-direction: column;
 }
 
 h1 {
@@ -63,6 +63,9 @@ h1 {
   line-height: 1.1;
 }
 
+/* ── FIXED: removed background-color and color from base button rule  ──
+   These were overriding every Tailwind bg-* and text-* class on buttons.
+   Only keep the non-color structural styles here.                       */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -70,14 +73,13 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 2px solid black;
 }
 
 @media (prefers-color-scheme: light) {
@@ -88,9 +90,7 @@ button:focus-visible {
   a:hover {
     color: blue;
   }
-  button {
-    background-color: #f9f9f9;
-  }
+  /* ── FIXED: removed button background-color override here too ── */
 }
 
 .dark {

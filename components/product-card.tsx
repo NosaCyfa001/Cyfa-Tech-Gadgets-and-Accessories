@@ -4,7 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { useCartStore } from "@/store/cart-store";
-import { ShoppingCart } from "lucide-react";
 
 interface Props {
   product: Stripe.Product;
@@ -76,7 +75,7 @@ export const ProductCard = ({ product }: Props) => {
               <Button
                 size="sm"
                 onClick={onAddItem}
-                className="w-full bg-gradient-to-r  hover:text-gray-300 text-white text-sm sm:text-base transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+                className="w-full bg-gray-900 text-white border-0 px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-700 hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2"
               >
                 Add to Cart
                 {quantity > 0 && (

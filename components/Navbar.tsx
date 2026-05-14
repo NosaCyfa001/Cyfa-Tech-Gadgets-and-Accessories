@@ -31,16 +31,20 @@ export const Navbar = () => {
 
         {/* Desktop Links */}
         <div className="hidden md:flex flex-1 justify-center text-lg font-bold">
-          <Link href="/" className="px-4 py-2 hover:text-gray-500">
-            Home
+          <Link href="/" className="px-4 py-2 hover:text-gray-700">
+            HOME
           </Link>
 
-          <Link href="/about" className="px-4 py-2 hover:text-gray-500">
-            About
+          <Link href="/about" className="px-4 py-2 hover:text-gray-700">
+            ABOUT
           </Link>
 
-          <Link href="/products" className="px-4 py-2 hover:text-gray-500">
-            Products
+          <Link href="/products" className="px-4 py-2 hover:text-gray-700">
+            SHOP
+          </Link>
+
+          <Link href="/contact" className="px-4 py-2 hover:text-gray-700">
+            CONTACT
           </Link>
         </div>
 
@@ -49,7 +53,7 @@ export const Navbar = () => {
           {/* Cart */}
           <Link
             href="/checkout"
-            className="relative hover:text-gray-500 transition-colors"
+            className="relative hover:text-gray-700 transition-colors"
           >
             <ShoppingCart className="h-6 w-6" />
 
@@ -80,25 +84,25 @@ export const Navbar = () => {
                     className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-gray-600 to-gray-800 text-white text-sm font-semibold cursor-pointer hover:scale-110 transition-all duration-200 shadow-md"
                     title="Logout"
                   >
-                    {session.user?.name?.charAt(0)?.toUpperCase() || 'U'}
+                    {session.user?.name?.charAt(0)?.toUpperCase() || "U"}
                   </div>
                 )}
 
                 {/* Tooltip */}
                 <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs rounded-md px-2.5 py-1.5 shadow-lg opacity-0 translate-y-1 scale-95 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-300 ease-in-out pointer-events-none whitespace-nowrap z-50">
-                  Logout
+                  LOGOUT
                 </span>
               </div>
             ) : (
               <div className="relative group">
                 <User
                   onClick={() => signIn("google")}
-                  className="h-6 w-6 text-black hover:text-gray-500 cursor-pointer hover:scale-110 transition-transform duration-200"
+                  className="h-6 w-6 text-black hover:text-gray-700 cursor-pointer hover:scale-110 transition-transform duration-200"
                 />
 
                 {/* Tooltip */}
-                <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs rounded-md px-2.5 py-1.5 shadow-lg opacity-0 translate-y-1 scale-95 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-300 ease-in-out pointer-events-none whitespace-nowrap hover:text-gray-300">
-                  Login
+                <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs rounded-md px-2.5 py-1.5 shadow-lg opacity-0 translate-y-1 scale-95 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-300 ease-in-out pointer-events-none whitespace-nowrap hover:text-gray-700">
+                  LOGIN
                 </span>
               </div>
             )}
@@ -123,20 +127,26 @@ export const Navbar = () => {
         <nav className="md:hidden bg-white shadow-md text-center">
           <ul className="flex flex-col p-4 space-y-2">
             <li>
-              <Link href="/" className="block hover:text-gray-500">
-                Home
+              <Link href="/" className="block hover:text-gray-700">
+                HOME
               </Link>
             </li>
 
             <li>
-              <Link href="/about" className="block hover:text-gray-500">
-                About
+              <Link href="/about" className="block hover:text-gray-700">
+                ABOUT
               </Link>
             </li>
 
             <li>
-              <Link href="/products" className="block hover:text-gray-500">
-                Products
+              <Link href="/products" className="block hover:text-gray-700">
+                SHOP
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/contact" className="block hover:text-gray-700">
+                CONTACT
               </Link>
             </li>
           </ul>
@@ -145,3 +155,4 @@ export const Navbar = () => {
     </nav>
   );
 };
+ 

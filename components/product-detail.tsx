@@ -81,11 +81,11 @@ export const ProductDetail = ({ product }: Props) => {
                   </label>
                   <div className="flex items-center gap-4 sm:gap-6">
                     <Button
-                      variant="outline"
+                      variant="default"
                       size="lg"
                       onClick={() => removeItem(product.id)}
                       disabled={quantity === 0}
-                      className="h-12 w-12 sm:h-14 sm:w-14 p-0 rounded-full text-white hover:text-gray-400 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                      className="h-12 w-12 sm:h-14 sm:w-14 p-0 text-white rounded-full bg-gray-900 border-0 shadow-sm hover:bg-gray-700  transition-all"
                     >
                       <Minus className="w-5 h-5 sm:w-6 sm:h-6" />
                     </Button>
@@ -98,7 +98,7 @@ export const ProductDetail = ({ product }: Props) => {
                       variant="default"
                       size="lg"
                       onClick={onAddItem}
-                      className="h-12 w-12 sm:h-14 sm:w-14 p-0 text-white rounded-full hover:text-gray-400  transition-all"
+                      className="h-12 w-12 sm:h-14 sm:w-14 p-0 text-white rounded-full bg-gray-900 border-0 shadow-sm hover:bg-gray-700  transition-all"
                     >
                       <Plus className="w-5 h-5 sm:w-6 sm:h-6" />
                     </Button>

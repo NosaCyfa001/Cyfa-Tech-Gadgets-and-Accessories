@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -83,18 +82,17 @@ export default async function Home() {
     },
     {
       question: "How fast is delivery?",
-      answer:
-        "Lagos deliveries within 24 hours. Other states 2-3 working days.",
+      answer: "Lagos deliveries within 24 hours. Other states 2-3 working days.",
     },
     {
       question: "Can I return products?",
-      answer:
-        "Yes, 14-day return policy for unopened items in original packaging.",
+      answer: "Yes, 14-day return policy for unopened items in original packaging.",
     },
   ];
 
   return (
     <div className="w-full min-h-screen overflow-x-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+
       {/* Hero Section */}
       <section className="relative w-full overflow-hidden py-20 px-4 md:px-6">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
@@ -110,8 +108,7 @@ export default async function Home() {
             </span>
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
-            Unlock the future with cutting-edge tech, gadgets & accessories for
-            everyday life.
+            Unlock the future with cutting-edge tech, gadgets & accessories for everyday life.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             {productCategories.map((category, index) => (
@@ -120,24 +117,19 @@ export default async function Home() {
                 className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm"
               >
                 {category.icon}
-                <span className="text-gray-700 font-medium">
-                  {category.name}
-                </span>
+                <span className="text-gray-700 font-medium">{category.name}</span>
               </div>
             ))}
           </div>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href={"/products"}
-              className="flex items-center justify-center"
-            >
-              <Button className="text-white px-8 py-3 rounded-full font-semibold hover:text-gray-300 transition-colors duration-300 flex items-center justify-center gap-2">
+            <Link href="/products" className="flex items-center justify-center">
+              <Button className="bg-gray-900 text-white border-0 px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-700 hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2">
                 Shop Now <ArrowRight className="w-5 h-5" />
               </Button>
             </Link>
-
-            <Link href={"/about"} className="flex items-center justify-center">
-              <Button className="text-white px-8 py-3 rounded-full font-semibold hover:text-gray-300 transition-colors duration-300 flex items-center justify-center gap-2">
+            <Link href="/about" className="flex items-center justify-center">
+              <Button className="bg-gray-900 text-white border-0 px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-700 hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2">
                 Learn More <ArrowRight className="w-5 h-5" />
               </Button>
             </Link>
@@ -170,7 +162,7 @@ export default async function Home() {
         <Carousel products={products.data} />
       </section>
 
-      {/* Features Section with Animated Icons */}
+      {/* Features Section */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold text-center mb-4 text-black">
@@ -179,7 +171,6 @@ export default async function Home() {
           <p className="text-gray-600 text-center mb-12">
             We make tech shopping simple and reliable
           </p>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <Card
@@ -188,7 +179,6 @@ export default async function Home() {
               >
                 <CardContent className="pt-6">
                   <div className="flex justify-center mb-4">
-                    {/* Option 1: Bounce Animation */}
                     <div className="animate-bounce hover:animate-pulse transition-all duration-300 group-hover:scale-110">
                       {feature.icon}
                     </div>
@@ -228,6 +218,7 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* CTA Section */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-yellow-500 to-blue-400 rounded-2xl p-12 text-white">
@@ -239,11 +230,8 @@ export default async function Home() {
               cart and head to checkout to make them yours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href={"/checkout"}
-                className="flex items-center justify-center"
-              >
-                <Button className="text-white hover:text-gray-300 px-8 py-3 rounded-full font-semibold  transition-colors duration-300 flex items-center justify-center gap-2">
+              <Link href="/checkout" className="flex items-center justify-center">
+                <Button className="bg-gray-900 text-white border-0 px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-700 hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2">
                   Go to Checkout <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>

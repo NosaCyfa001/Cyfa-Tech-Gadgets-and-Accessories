@@ -54,7 +54,7 @@ export default function CompleteAboutPage() {
     {
       name: "Nosa Ugobor (Cyfa)",
       role: "Founder & CEO",
-      bio: "Tech entrepreneur with 8+ years in Software development. Previously at Meta & Google.",
+      bio: "Visionary tech entrepreneur who started Cyfa Tech to make quality gadgets accessible to everyone.",
       image: "/cyfa.jpg",
     },
     {
@@ -135,10 +135,26 @@ export default function CompleteAboutPage() {
   ];
 
   const productCategories = [
-    { icon: <Smartphone className="w-8 h-8" />, name: "Smartphones", count: "500+" },
-    { icon: <Headphones className="w-8 h-8" />, name: "Audio Gear", count: "300+" },
-    { icon: <Watch className="w-8 h-8" />, name: "Smartwatches", count: "200+" },
-    { icon: <Battery className="w-8 h-8" />, name: "Accessories", count: "1000+" },
+    {
+      icon: <Smartphone className="w-8 h-8" />,
+      name: "Smartphones",
+      count: "500+",
+    },
+    {
+      icon: <Headphones className="w-8 h-8" />,
+      name: "Audio Gear",
+      count: "300+",
+    },
+    {
+      icon: <Watch className="w-8 h-8" />,
+      name: "Smartwatches",
+      count: "200+",
+    },
+    {
+      icon: <Battery className="w-8 h-8" />,
+      name: "Accessories",
+      count: "1000+",
+    },
   ];
 
   const nextTeamSlide = () => {
@@ -147,7 +163,8 @@ export default function CompleteAboutPage() {
 
   const prevTeamSlide = () => {
     setCurrentTeamSlide(
-      (prev) => (prev - 1 + Math.ceil(team.length / 4)) % Math.ceil(team.length / 4),
+      (prev) =>
+        (prev - 1 + Math.ceil(team.length / 4)) % Math.ceil(team.length / 4),
     );
   };
 
@@ -159,42 +176,51 @@ export default function CompleteAboutPage() {
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Our Story
+            </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-yellow-500 to-blue-500 mx-auto"></div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed">
-                Founded by a visionary tech entrepreneur who was tired of overpriced gadgets and
-                mediocre service,
-                <span className="font-bold text-blue-600"> Cyfa Tech</span> emerged from a simple
-                belief: everyone deserves access to premium technology without the premium price
-                tag.
+                Founded by a visionary tech entrepreneur who was tired of
+                overpriced gadgets and mediocre service,
+                <span className="font-bold text-black"> Cyfa Tech</span>{" "}
+                emerged from a simple belief: everyone deserves access to
+                premium technology without the premium price tag.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                What started as a passion project has evolved into a trusted destination for over
-                50,000+ customers who demand quality, value, and exceptional service. We&apos;ve
-                built relationships with leading manufacturers to bring you authentic products at
+                What started as a passion project has evolved into a trusted
+                destination for over 50,000+ customers who demand quality,
+                value, and exceptional service. We&apos;ve built relationships
+                with leading manufacturers to bring you authentic products at
                 unbeatable prices.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Today, we&apos;re more than just a store—we&apos;re a community of innovators and
-                tech enthusiasts, with 7 branches across Lagos and Abuja, united by the belief that
-                great technology should enrich every aspect of life.
+                Today, we&apos;re more than just a store—we&apos;re a community
+                of innovators and tech enthusiasts, with 7 branches across Lagos
+                and Abuja, united by the belief that great technology should
+                enrich every aspect of life.
               </p>
             </div>
             <div className="relative">
               <div className="bg-gradient-to-br from-yellow-500 to-blue-400 rounded-2xl p-8 text-white">
                 <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
                 <p className="text-white font-normal leading-relaxed mt-4">
-                  At <span className="font-bold">Cyfa Tech</span>, we go beyond retail—we
-                  <span className="font-bold"> buy 100% high-quality brand-new and UK used gadgets</span>,
-                  ensuring every device meets our strict quality standards.
-                  We don’t just sell; we also offer a
-                  <span className="font-bold"> swap service</span>: bring your old gadget,
-                  add some cash, and upgrade instantly.
-                  It’s our way of making technology more accessible, flexible, and affordable for everyone.
+                  At <span className="font-bold">Cyfa Tech</span>, we go beyond
+                  retail—we
+                  <span className="font-bold">
+                    {" "}
+                    buy 100% high-quality brand-new and UK used gadgets
+                  </span>
+                  , ensuring every device meets our strict quality standards. We
+                  don’t just sell; we also offer a
+                  <span className="font-bold"> swap service</span>: bring your
+                  old gadget, add some cash, and upgrade instantly. It’s our way
+                  of making technology more accessible, flexible, and affordable
+                  for everyone.
                 </p>
               </div>
             </div>
@@ -206,8 +232,12 @@ export default function CompleteAboutPage() {
       <section className="py-16 px-6 bg-white/50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Journey</h2>
-            <p className="text-gray-600">Key milestones that shaped Cyfa Tech</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Our Journey
+            </h2>
+            <p className="text-gray-600">
+              Key milestones that shaped Cyfa Tech
+            </p>
           </div>
 
           <div className="relative">
@@ -218,11 +248,15 @@ export default function CompleteAboutPage() {
                 key={index}
                 className={`flex items-center mb-8 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
               >
-                <div className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}>
+                <div
+                  className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}
+                >
                   <div className="bg-white rounded-lg p-4 shadow-lg">
                     <div className="flex items-center gap-2 mb-2">
                       {milestone.icon}
-                      <span className="font-bold text-blue-600">{milestone.year}</span>
+                      <span className="font-bold text-blue-600">
+                        {milestone.year}
+                      </span>
                     </div>
                     <p className="text-gray-700">{milestone.event}</p>
                   </div>
@@ -240,8 +274,12 @@ export default function CompleteAboutPage() {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
-            <p className="text-xl text-gray-600">The Amazing people Behind Cyfa Tech</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Meet Our Team
+            </h2>
+            <p className="text-xl text-gray-600">
+              The Amazing people Behind Cyfa Tech
+            </p>
           </div>
 
           <div className="relative">
@@ -252,7 +290,10 @@ export default function CompleteAboutPage() {
                 style={{ transform: `translateX(-${currentTeamSlide * 100}%)` }}
               >
                 {Array.from({ length: totalSlides }).map((_, slideIndex) => (
-                  <div key={slideIndex} className="w-full flex-shrink-0 min-w-full">
+                  <div
+                    key={slideIndex}
+                    className="w-full flex-shrink-0 min-w-full"
+                  >
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                       {team
                         .slice(slideIndex * 4, slideIndex * 4 + 4)
@@ -272,9 +313,15 @@ export default function CompleteAboutPage() {
                                 />
                               </div>
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                            <p className="text-gray-900 font-semibold mb-3">{member.role}</p>
-                            <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
+                            <h3 className="text-xl font-bold text-gray-900 mb-1">
+                              {member.name}
+                            </h3>
+                            <p className="text-gray-900 font-semibold mb-3">
+                              {member.role}
+                            </p>
+                            <p className="text-gray-600 text-sm leading-relaxed">
+                              {member.bio}
+                            </p>
                           </div>
                         ))}
                     </div>
@@ -292,9 +339,11 @@ export default function CompleteAboutPage() {
                     onClick={() => setCurrentTeamSlide(index)}
                     className={`w-8 h-8 flex items-center justify-center rounded-full text-sm font-semibold transition-all duration-300 
                       hover:scale-110 
-                      ${index === currentTeamSlide
-                        ? "bg-white text-white"
-                        : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
+                      ${
+                        index === currentTeamSlide
+                          ? "bg-gray-900 text-white"
+                          : "bg-gray-300 text-gray-700 hover:bg-gray-400"
+                      }`}
                   >
                     {index + 1}
                   </button>
@@ -309,14 +358,18 @@ export default function CompleteAboutPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Visit Us Today</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Visit Us Today
+            </h2>
             <p className="text-gray-600">Come, Experience Quality Firsthand</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center group cursor-pointer">
               <MapPin className="w-8 h-8 text-red-500 mx-auto mb-4 transition-all duration-500 group-hover:-translate-y-2 group-hover:scale-110" />
-              <h3 className="text-lg mb-2 text-black font-bold">Visit Our Stores</h3>
+              <h3 className="text-lg mb-2 text-black font-bold">
+                Visit Our Stores
+              </h3>
               <p className="text-gray-600">
                 8 Pepple St, computer village, Ikeja, Lagos.
                 <br />
@@ -350,7 +403,9 @@ export default function CompleteAboutPage() {
 
             <div className="text-center group cursor-pointer">
               <Phone className="w-8 h-8 text-neutral-600 mx-auto mb-4 transition-all duration-500 group-hover:scale-125 group-hover:-rotate-12" />
-              <h3 className="text-lg mb-2 text-black font-bold">Get in Touch</h3>
+              <h3 className="text-lg mb-2 text-black font-bold">
+                Get in Touch
+              </h3>
               <p className="text-gray-600">
                 09132496929
                 <br />
@@ -367,4 +422,3 @@ export default function CompleteAboutPage() {
     </div>
   );
 }
-
