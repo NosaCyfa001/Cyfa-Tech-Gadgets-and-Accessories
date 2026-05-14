@@ -44,7 +44,7 @@ export default function CheckoutPage() {
           Your Cart is Empty!
         </h1>
         <p className="text-black max-w-sm text-base sm:text-lg mb-8">
-          Looks like you haven't added anything yet. Start exploring our amazing products!
+          Looks like you haven&apos;t added anything yet. Start exploring our amazing products!
         </p>
         <Link href="/products" className="flex items-center justify-center">
           {/* FIXED: matches clear cart style */}
