@@ -67,26 +67,32 @@ export const Navbar = () => {
           {/* Auth */}
           <div className="relative flex items-center">
             {session ? (
-              <div className="relative group cursor-pointer">
-                {/* Avatar - Profile Pic OR Initials */}
-                {session.user?.image ? (
+              <div
+                className="relative group cursor-pointer h-8 w-8"
+                onClick={() => signOut()}
+                title="Logout"
+              >
+                {/* Profile picture — shown by default */}
+                {session.user?.image && (
                   <Image
                     src={session.user.image}
                     alt="User Avatar"
                     width={32}
                     height={32}
-                    className="rounded-full hover:scale-110 transition-transform duration-200 object-cover"
-                    onClick={() => signOut()}
+                    className="absolute inset-0 rounded-full object-cover transition-opacity duration-200 group-hover:opacity-0"
                   />
-                ) : (
-                  <div
-                    onClick={() => signOut()}
-                    className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-gray-600 to-gray-800 text-white text-sm font-semibold cursor-pointer hover:scale-110 transition-all duration-200 shadow-md"
-                    title="Logout"
-                  >
-                    {session.user?.name?.charAt(0)?.toUpperCase() || "U"}
-                  </div>
                 )}
+
+                {/* First-letter avatar — shown on hover, Google-style */}
+                <div
+                  className={`absolute inset-0 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-gray-600 to-gray-800 text-white text-sm font-semibold shadow-md transition-opacity duration-200 ${
+                    session.user?.image
+                      ? "opacity-0 group-hover:opacity-100"
+                      : "opacity-100"
+                  }`}
+                >
+                  {session.user?.name?.charAt(0)?.toUpperCase() || "U"}
+                </div>
 
                 {/* Tooltip */}
                 <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs rounded-md px-2.5 py-1.5 shadow-lg opacity-0 translate-y-1 scale-95 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-300 ease-in-out pointer-events-none whitespace-nowrap z-50">
@@ -155,4 +161,3 @@ export const Navbar = () => {
     </nav>
   );
 };
- 
