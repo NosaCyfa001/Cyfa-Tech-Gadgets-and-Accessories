@@ -72,25 +72,8 @@ export const Navbar = () => {
                 onClick={() => signOut()}
                 title="Logout"
               >
-                {/* Profile picture — shown by default */}
-                {session.user?.image && (
-                  <Image
-                    src={session.user.image}
-                    alt="User Avatar"
-                    width={32}
-                    height={32}
-                    className="absolute inset-0 rounded-full object-cover transition-opacity duration-200 group-hover:opacity-0"
-                  />
-                )}
-
-                {/* First-letter avatar — shown on hover, Google-style */}
-                <div
-                  className={`absolute inset-0 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-gray-600 to-gray-800 text-white text-sm font-semibold shadow-md transition-opacity duration-200 ${
-                    session.user?.image
-                      ? "opacity-0 group-hover:opacity-100"
-                      : "opacity-100"
-                  }`}
-                >
+                {/* First-letter avatar — always visible, Google name-icon style */}
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-gray-600 to-gray-800 text-white text-sm font-semibold shadow-md hover:scale-110 transition-transform duration-200">
                   {session.user?.name?.charAt(0)?.toUpperCase() || "U"}
                 </div>
 
